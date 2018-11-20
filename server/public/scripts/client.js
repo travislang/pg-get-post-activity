@@ -33,7 +33,7 @@ function displayBooks( books ){
         ` )
     }
 }
-
+// add new book to DB
 function addBook( ){
     console.log( 'in addBook' );
     const objToSend = {
@@ -55,6 +55,7 @@ function addBook( ){
     })
 }// end addBook
 
+//clear inputs after successfully adding book to DB
 function clearInputs( ){
     $('#titleIn').val('');
     $('#authorIn').val('');
