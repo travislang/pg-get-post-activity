@@ -33,7 +33,14 @@ router.get( '/', ( req, res ) => {
 
 router.post( '/', ( req, res ) => {
     console.log( 'POST hit:', req.body );
-    res.send( 'woof' );
-})
+    const queryString = `INSERT INTO books (title, author, published)
+    VALUES ($1, $2, $3);`;
+    pool.query( queryString, [ req.body.title, req.body.author, req.body.published ] ).then( () => {
+        res.sendStatus( 201 );
+    }).catch( ( err ) => {
+        console.log( 'error writing book to DB:', err );
+        res.sendStatus( 500 );
+    })// end query
+})// end /books POST
 
 module.exports = router;

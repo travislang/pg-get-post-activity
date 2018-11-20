@@ -21,6 +21,7 @@ function getBooks( ){
 
 //display books on DOM
 function displayBooks( books ){
+    $( '#booksOutputDiv' ).empty( );
     for( let book of books ){
         $( '#booksOutputDiv' ).append( `
         <div class="bookDiv">
@@ -47,6 +48,7 @@ function addBook( ){
         data: objToSend
     }).then( function( res ){
         console.log( 'back from POST with:', res );
+        getBooks( );
     }).catch( function( err ){
         console.log( err );
     })
