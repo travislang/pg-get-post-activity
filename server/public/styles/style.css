@@ -1,0 +1,31 @@
+.center {
+    text-align: center;
+    width: 50%;
+    margin: 0px auto;
+}
+
+
+.table {
+    border-radius: 5px;
+    width: 50%;
+    margin: 0px auto;
+}
+
+.input-group {
+    width: 50%;
+    margin: 0 auto;
+}
+
+#addBookButton {
+    width: 50%;
+    margin: 10px auto;
+}
+
+.mainHeader {
+    padding: 40px;
+}
+
+.secondHeader {
+    margin: 0 auto;
+    padding: 10px;
+}

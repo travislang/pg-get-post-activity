@@ -21,15 +21,14 @@ function getBooks( ){
 
 //display books on DOM
 function displayBooks( books ){
-    $( '#booksOutputDiv' ).empty( );
+    $( '#booksOutput' ).empty( );
     for( let book of books ){
-        $( '#booksOutputDiv' ).append( `
-        <div class="bookDiv">
-        <p><strong>Title:</strong>${book.title}</p>
-        <p><strong>Author:</strong>${book.author}</p>
-        <p><strong>Published:</strong>${book.published}</p>
-        </div>
-        <hr>
+        $( '#booksOutput' ).append( `
+        <tr class="bookDiv">
+        <td>${book.title}</td>
+        <td>${book.author}</td>
+        <td>${book.published}</td>
+        </tr>
         ` )
     }
 }
