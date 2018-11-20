@@ -49,7 +49,14 @@ function addBook( ){
     }).then( function( res ){
         console.log( 'back from POST with:', res );
         getBooks( );
+        clearInputs( );
     }).catch( function( err ){
         console.log( err );
     })
 }// end addBook
+
+function clearInputs( ){
+    $('#titleIn').val('');
+    $('#authorIn').val('');
+    $('#publishedIn').val('');
+}// end clearInputs
