@@ -27,7 +27,7 @@ function displayBooks( books ){
         <tr class="bookDiv">
         <td>${book.title}</td>
         <td>${book.author}</td>
-        <td>${book.published}</td>
+        <td>${moment().date(book.published).format("MMMM Do, YYYY")}</td>
         </tr>
         ` )
     }

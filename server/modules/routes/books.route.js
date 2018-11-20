@@ -25,6 +25,7 @@ router.get( '/', ( req, res ) => {
     // create query and run on pool
     const queryString = 'SELECT * FROM books;';
     pool.query( queryString ).then( (results ) => {
+        console.log( results.rows )
         res.send( results.rows );
     }).catch( ( err ) => {
         console.log( 'error retrieving data:', err );
