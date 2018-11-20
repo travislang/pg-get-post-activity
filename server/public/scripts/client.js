@@ -2,6 +2,7 @@ $( document ).ready( readyNow );
 
 function readyNow( ){
     console.log( 'JQ' );
+    $( '#addBookButton' ).on( 'click', addBook );
     getBooks( );
 }// end readyNow
 
@@ -31,3 +32,22 @@ function displayBooks( books ){
         ` )
     }
 }
+
+function addBook( ){
+    console.log( 'in addBook' );
+    const objToSend = {
+        title: $( '#titleIn' ).val( ),
+        author: $( '#authorIn' ).val( ),
+        published: $( '#publishedIn' ).val( )
+    }
+    console.log( 'sending:', objToSend );
+    $.ajax({
+        method: 'POST',
+        url: '/books',
+        data: objToSend
+    }).then( function( res ){
+        console.log( 'back from POST with:', res );
+    }).catch( function( err ){
+        console.log( err );
+    })
+}// end addBook
